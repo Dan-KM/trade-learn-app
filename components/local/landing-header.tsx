@@ -28,16 +28,18 @@ export default function FloatingNavbar() {
               href="/"
               className="flex items-center space-x-2 group cursor-pointer"
             >
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-2 shadow-lg">
-                <span className="text-white font-bold text-lg">TL</span>
+              <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-2 shadow-lg">
+                <span className="text-white font-bold text-sm sm:text-base md:text-lg">
+                  TL
+                </span>
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 via-gray-800 to-gray-700 bg-clip-text text-transparent">
+              <span className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-600 via-gray-800 to-gray-700 bg-clip-text text-transparent">
                 TradeLearn
               </span>
             </Link>
           </div>
 
-          {/* Desktop Links */}
+          {/* Desktop Links (with CTA included) */}
           <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
@@ -61,13 +63,27 @@ export default function FloatingNavbar() {
                 ></div>
               </Link>
             ))}
+
+            {/* CTA Button (desktop only) */}
+            <Link
+              href="/get-started"
+              className="group relative px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-2.5 
+                         text-sm sm:text-base md:text-lg 
+                         bg-gradient-to-r from-red-600 to-red-500 
+                         text-white font-semibold rounded-full shadow-lg 
+                         hover:shadow-xl transform transition-all duration-300 
+                         hover:scale-105 hover:from-red-700 hover:to-red-600 overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-red-400/20 to-red-300/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-400 rounded-lg blur opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+              <span className="relative">Get Started</span>
+            </Link>
           </div>
 
-          {/* Right side */}
-          <div className="flex items-center space-x-3">
-            {/* Mobile menu button */}
+          {/* Right side (mobile menu button only) */}
+          <div className="flex items-center space-x-3 lg:hidden">
             <button
-              className="lg:hidden p-2 rounded-lg hover:bg-white/20 transition-colors duration-200"
+              className="p-2 rounded-lg hover:bg-white/20 transition-colors duration-200"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
             >
@@ -101,16 +117,6 @@ export default function FloatingNavbar() {
                 </svg>
               )}
             </button>
-
-            {/* CTA Button */}
-            <Link
-              href="/get-started"
-              className="group relative px-6 py-2.5 bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 hover:from-red-700 hover:to-red-600 overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-red-400/20 to-red-300/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-400 rounded-lg blur opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
-              <span className="relative">Get Started</span>
-            </Link>
           </div>
         </div>
 
@@ -125,7 +131,7 @@ export default function FloatingNavbar() {
         ></div>
       </nav>
 
-      {/* Mobile dropdown (absolute, keeps navbar intact) */}
+      {/* Mobile dropdown */}
       {isOpen && (
         <div className="absolute top-full left-0 right-0 mt-2 px-4">
           <div className="lg:hidden space-y-3 bg-white/20 backdrop-blur-xl rounded-2xl p-4 shadow-xl border border-white/30">
@@ -143,6 +149,14 @@ export default function FloatingNavbar() {
                 {link.label}
               </Link>
             ))}
+
+            {/* CTA for mobile menu */}
+            <Link
+              href="/get-started"
+              className="block w-full text-center px-4 py-2 bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold rounded-full shadow-md hover:from-red-700 hover:to-red-600 transition-all duration-300"
+            >
+              Get Started
+            </Link>
           </div>
         </div>
       )}

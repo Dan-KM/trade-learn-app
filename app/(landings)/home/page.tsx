@@ -1,5 +1,3 @@
-import { TradingFooter } from "./_components/footer";
-import { FloatingNavbar } from "./_components/header";
 import { HeroSection } from "./_components/hero-section";
 import { Layout27 } from "./_components/section2";
 import { Layout246 } from "./_components/section3";
@@ -11,7 +9,7 @@ import { Layout89 } from "./_components/section7";
 export default function Home() {
   return (
     <>
-      <FloatingNavbar />
+      {/* <FloatingNavbar /> */}
       <HeroSection />
       <Layout27 />
       <Layout246 />
@@ -19,7 +17,7 @@ export default function Home() {
       <Testimonial4 />
       <Cta7 />
       <Layout89 />
-      <TradingFooter />
+      {/* <TradingFooter /> */}
     </>
   );
 }

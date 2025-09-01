@@ -41,24 +41,32 @@ export function Cta7() {
 
         <div className="flex flex-col sm:flex-row items-start justify-start gap-4">
           {/* Primary CTA - Blue themed */}
-          <button
+          {/* <button
             className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-500 hover:scale-105 hover:from-blue-700 hover:to-blue-600 overflow-hidden"
             title="Sign Up"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-blue-300/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg blur opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
             <span className="relative">Sign Up Free</span>
-          </button>
+          </button> */}
 
           {/* Secondary CTA - Red themed */}
-          <button
+          {/* <button
             className="group relative px-8 py-4 bg-white border-2 border-gray-200 text-gray-700 font-semibold rounded-lg shadow-md hover:shadow-lg transform transition-all duration-500 hover:scale-105 hover:border-red-300 hover:text-red-700 overflow-hidden"
             title="Learn More"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-red-50/50 to-red-100/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="absolute -inset-1 bg-gradient-to-r from-red-400/20 to-red-300/20 rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
             <span className="relative">Learn More</span>
-          </button>
+          </button> */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8 animate-fade-up animation-delay-1000">
+            <button className="w-full sm:w-auto px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 focus:outline-none focus:ring-4 focus:ring-blue-300/50">
+              Learn More
+            </button>
+            <button className="w-full sm:w-auto px-10 py-4 bg-transparent border-2 border-red-400 hover:bg-red-500 hover:border-red-500 text-red-300 hover:text-white font-semibold rounded-xl transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/25 focus:outline-none focus:ring-4 focus:ring-red-300/50">
+              Sign Up
+            </button>
+          </div>
         </div>
       </div>
 
